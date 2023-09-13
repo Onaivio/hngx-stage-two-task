@@ -23,6 +23,7 @@ const MoviePage = () => {
       .get(apiUrl)
       .then((response) => {
         setMovie(response.data);
+        console.log(response);
       })
       .catch((error) => {
         console.error("Error fetching movie movie?:", error);
@@ -31,6 +32,17 @@ const MoviePage = () => {
 
   const releaseDate = new Date(movie?.release_date);
   const releaseDateUTC = releaseDate.toUTCString().slice(0, 16);
+  const runtime = movie?.runtime;
+  if (runtime) {
+    const hours = Math.floor(runtime / 60);
+    const minutes = runtime % 60;
+    const formattedRuntime = `${hours} h • ${minutes} min`;
+    console.log(
+      `The movie's duration is ${hours} hours and ${minutes} minutes`
+    );
+  } else {
+    console.log("No runtime information available for this movie.");
+  }
 
   return (
     <>
@@ -63,7 +75,8 @@ const MoviePage = () => {
                     data-testid="movie-title"
                     className="md:text-2xl text-xl font-medium text-[#404040]"
                   >
-                    {movie?.title} • 2022 • PG-13 • 2h 10m
+                    <span className="font-bold">{movie?.title}</span> •{" "}
+                    {releaseDateUTC} • PG-13 • 
                   </p>
                   <div className="flex gap-x-3">
                     {movie?.genres &&

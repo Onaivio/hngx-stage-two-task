@@ -38,7 +38,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="text-gray-500 text-base transition-all font-bold text-center">
-          © 2021 MovieBox by{" "}
+          © 2023 MovieBox by{" "}
           <Link
             className="text-gray-400 text-lg font-bold hover:text-gray-800 transition-all hover:underline"
             to="https://onaivio.vercel.app/"
