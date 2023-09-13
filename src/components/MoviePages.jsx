@@ -33,16 +33,11 @@ const MoviePage = () => {
   const releaseDate = new Date(movie?.release_date);
   const releaseDateUTC = releaseDate.toUTCString().slice(0, 16);
   const runtime = movie?.runtime;
-  if (runtime) {
-    const hours = Math.floor(runtime / 60);
-    const minutes = runtime % 60;
-    const formattedRuntime = `${hours} h • ${minutes} min`;
-    console.log(
-      `The movie's duration is ${hours} hours and ${minutes} minutes`
-    );
-  } else {
-    console.log("No runtime information available for this movie.");
-  }
+
+  const hours = Math.floor(runtime / 60);
+  const minutes = runtime % 60;
+  const formattedRuntime = `${hours} h ${minutes} min`;
+  console.log(`The movie's duration is ${hours} hours and ${minutes} minutes`);
 
   return (
     <>
@@ -76,7 +71,7 @@ const MoviePage = () => {
                     className="md:text-2xl text-xl font-medium text-[#404040]"
                   >
                     <span className="font-bold">{movie?.title}</span> •{" "}
-                    {releaseDateUTC} • PG-13 • 
+                    {releaseDateUTC} • PG-13 • {formattedRuntime}
                   </p>
                   <div className="flex gap-x-3">
                     {movie?.genres &&
@@ -103,7 +98,7 @@ const MoviePage = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-y-4 gap-x-2 md:flex-row">
-                <div className="flex-[1.4_1_0] w-1/3 flex flex-col gap-y-3 lg:gap-y-7">
+                <div className="flex-[1.4_1_0] w-1/3 flex flex-col gap-y-3 lg:gap-y-5">
                   <p data-testid="movie-overview" className="lg:text-xl">
                     {movie?.overview}
                   </p>
