@@ -16,16 +16,10 @@ const Footer = () => {
               alt="facebook"
             />
           </Link>
-          <Link
-            className="hover:scale-110 transform transition-all"
-            to="https://instagram.com/chizzi01"
-          >
+          <Link className="hover:scale-110 transform transition-all" to="#">
             <img src={instagram} alt="instagram" />
           </Link>
-          <Link
-            className="hover:scale-110 transform transition-all"
-            to="https://twitter.com/codabytez"
-          >
+          <Link className="hover:scale-110 transform transition-all" to="#">
             <img src={twitter} alt="twitter" />
           </Link>
           <Link className="hover:scale-110 transform transition-all" href="#">
@@ -47,9 +41,9 @@ const Footer = () => {
           © 2021 MovieBox by{" "}
           <Link
             className="text-gray-400 text-lg font-bold hover:text-gray-800 transition-all hover:underline"
-            to="https://obinnachidi.vercel.app/"
+            to="https://onaivio.vercel.app/"
           >
-            Obinna Chidi
+            Okomayin Onaivi
           </Link>
         </div>
       </div>
