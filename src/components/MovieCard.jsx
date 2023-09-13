@@ -16,6 +16,7 @@ const MovieCard = ({ id, title, releaseDate, posterUrl }) => {
     <Link to={`/movie/${id}`} className="flex flex-col gap-y-3 font-dm">
       <div data-testid="movie-card" className="relative">
         <img
+          className="w-full"
           data-testid="movie-poster"
           loading="lazy"
           src={posterUrl}
@@ -35,7 +36,10 @@ const MovieCard = ({ id, title, releaseDate, posterUrl }) => {
         <p data-testid="movie-release-date" className="text-xs text-[#9CA3AF]">
           USA, {releaseDate}
         </p>
-        <p data-testid="movie-title" className="text-lg font-dm w-fit text-[#111827]">
+        <p
+          data-testid="movie-title"
+          className="text-lg font-dm w-fit text-[#111827]"
+        >
           {title}
         </p>
       </div>
